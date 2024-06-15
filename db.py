@@ -5,29 +5,29 @@ import chromadb
 from chromadb.config import Settings
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 
-# Load the lecture notes JSON file
+
 with open('lectures0.json', 'r') as f:
     lecture_notes = json.load(f)
 
-# Load the model architectures JSON file
+
 with open('mp.json', 'r') as f:
     model_architectures = json.load(f)
 
-# Extract and structure the lecture notes into a dictionary
+
 lecture_contents = {item['Title']: item['Content'] for item in lecture_notes}
 
-# Augment the data with additional information about milestone model architectures and papers
+
 augmented_data = {
     "Milestone Model Architectures": "Some of the milestone model architectures and papers in the last few years include the Transformer model (Vaswani et al., 2017), BERT (Devlin et al., 2018), GPT-3 (Brown et al., 2020), and PaLM (Chowdhery et al., 2022). The Transformer introduced the self-attention mechanism and became the foundation for many modern language models. BERT revolutionized pre-training for natural language tasks, while GPT-3 demonstrated the capabilities of large language models. PaLM is a recent milestone, being one of the largest and most capable language models to date.",
     **lecture_contents
 }
 
-# Create the model architectures dictionary in the specified format
+
 model_architectures_df = pd.DataFrame(model_architectures)
 model_architectures_dict = model_architectures_df.to_dict(orient='list')
 model_architectures_json = json.dumps(model_architectures_dict)
 
-# Combine all data into a single dictionary
+
 all_data = {**augmented_data, "model_architectures": model_architectures_json}
 
 def generate_embeddings(text, model):
@@ -48,7 +48,7 @@ def create_vector_store(data, embedding_model):
                 embeddings=[embeddings]
             )
         else:
-            # Split the text into smaller chunks
+      
             chunks = [value[i:i+1000] for i in range(0, len(value), 1000)]
             for i, chunk in enumerate(chunks):
                 embeddings = generate_embeddings(chunk, embedding_model)
@@ -61,10 +61,10 @@ def create_vector_store(data, embedding_model):
     
     return collection
 
-# Initialize the embedding model
+
 embedding_model = SentenceTransformer('all-MiniLM-L6-v2')
 
-# Create the vector store
+
 vector_store = create_vector_store(all_data, embedding_model)
 
 def process_query(query, collection, embedding_model, top_k=20):
@@ -76,18 +76,18 @@ def process_query(query, collection, embedding_model, top_k=20):
     
     return results
 
-# Load the FLAN-T5 model and tokenizer
+
 tokenizer = AutoTokenizer.from_pretrained("google/flan-t5-large")
 model = AutoModelForSeq2SeqLM.from_pretrained("google/flan-t5-large")
 
-# Initialize conversation memory
+
 conversation_history = []
 
 def generate_answer(query, context, conversation_history):
-    # Combine query and context with a specific prompt for large language models
+
     input_text = f"Answer the following question about large language models, based on the given context. If the context doesn't contain enough relevant information, say that the context is insufficient. Cite the relevant sections from the context used to construct the answer.\n\nConversation History: {' '.join(conversation_history)}\n\nQuestion: {query}\n\nContext: {context}\n\nAnswer:"
     
-    # Generate answer
+
     input_ids = tokenizer(input_text, return_tensors="pt", max_length=512, truncation=True).input_ids
     outputs = model.generate(
         input_ids,
@@ -105,13 +105,13 @@ def generate_answer(query, context, conversation_history):
     return answer
 
 def generate_summary(conversation_history):
-    # Combine the conversation history into a single string
+
     conversation_text = ' '.join(conversation_history)
     
-    # Prompt the model to generate a summary of the conversation
+
     input_text = f"Generate a summary of the following conversation:\n\n{conversation_text}\n\nSummary:"
     
-    # Generate summary
+
     input_ids = tokenizer(input_text, return_tensors="pt", max_length=512, truncation=True).input_ids
     outputs = model.generate(
         input_ids,
@@ -145,17 +145,16 @@ def main():
             print("\nConversation Summary:\n", summary)
             continue
         
-        # Process the query
+
         results = process_query(query, vector_store, embedding_model)
         
-        # Prepare context for answer generation
+
         context = "\n".join([doc for doc in results['documents'][0]])
         
-        # Generate and display the answer
+
         answer = generate_answer(query, context, conversation_history)
         print("\nAnswer:", answer)
-        
-        # Update conversation history
+
         conversation_history.append(query)
         conversation_history.append(answer)
 
