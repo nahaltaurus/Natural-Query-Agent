@@ -4,7 +4,7 @@ import pandas as pd
 import re
 import json
 
-# URLs to fetch content from
+
 urls = {
     'harms-1': 'https://stanford-cs324.github.io/winter2022/lectures/harms-1/',
     'introduction': 'https://stanford-cs324.github.io/winter2022/lectures/introduction/',
@@ -12,7 +12,7 @@ urls = {
     'legality': 'https://stanford-cs324.github.io/winter2022/lectures/legality/'
 }
 
-# Function to fetch HTML content and extract div content
+
 def fetch_and_extract_content(url):
     try:
         response = requests.get(url)
@@ -31,24 +31,22 @@ def fetch_and_extract_content(url):
     except requests.exceptions.RequestException as e:
         return f"Error fetching {url}: {str(e)}"
 
-# List to store results
+
 results = []
 
-# Iterate through each URL and fetch content
+
 for key, url in urls.items():
     content = fetch_and_extract_content(url)
     results.append({'Title': key, 'Content': content})
     print(f"Fetched content for '{key}' from {url}")
 
-# Convert results to a DataFrame
 df = pd.DataFrame(results)
 
-# Save DataFrame to CSV
 csv_file = 'lecture_content9.csv'
 df.to_csv(csv_file, index=False, encoding='utf-8')
 print(f"Content saved to '{csv_file}'")
 
-# Convert DataFrame to JSON
+
 lectures_json = df.to_dict(orient='records')
 json_file = 'lectures0.json'
 with open(json_file, 'w') as f:
