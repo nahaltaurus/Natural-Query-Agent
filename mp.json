@@ -1,0 +1,247 @@
+[
+    {
+        "Date": "2017-06",
+        "Keywords": "Transformers",
+        "Institute": "Google",
+        "Paper": "Attention Is All You Need",
+        "Publication": "NeurIPS, citation 93862"
+    },
+    {
+        "Date": "2018-06",
+        "Keywords": "GPT 1.0",
+        "Institute": "OpenAI",
+        "Paper": "Improving Language Understanding by Generative Pre-Training",
+        "Publication": "citation 17985"
+    },
+    {
+        "Date": "2018-10",
+        "Keywords": "BERT",
+        "Institute": "Google",
+        "Paper": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+        "Publication": "NAACL, citation 75432"
+    },
+    {
+        "Date": "2019-02",
+        "Keywords": "GPT 2.0",
+        "Institute": "OpenAI",
+        "Paper": "Language Models are Unsupervised Multitask Learners",
+        "Publication": "citation 16549"
+    },
+    {
+        "Date": "2019-09",
+        "Keywords": "Megatron-LM",
+        "Institute": "NVIDIA",
+        "Paper": "Megatron-LM: Training Multi-Billion Parameter Language Models Using Model Parallelism",
+        "Publication": "citation 3290"
+    },
+    {
+        "Date": "2019-10",
+        "Keywords": "T5",
+        "Institute": "Google",
+        "Paper": "Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer",
+        "Publication": "JMLR, citation 14204"
+    },
+    {
+        "Date": "2019-10",
+        "Keywords": "ZeRO",
+        "Institute": "Microsoft",
+        "Paper": "ZeRO: Memory Optimizations Toward Training Trillion Parameter Models",
+        "Publication": "SC, citation 106"
+    },
+    {
+        "Date": "2020-01",
+        "Keywords": "Scaling Law",
+        "Institute": "OpenAI",
+        "Paper": "Scaling Laws for Neural Language Models",
+        "Publication": "citation 2481"
+    },
+    {
+        "Date": "2020-05",
+        "Keywords": "GPT 3.0",
+        "Institute": "OpenAI",
+        "Paper": "Language models are few-shot learners",
+        "Publication": "NeurIPS, citation 26180"
+    },
+    {
+        "Date": "2021-01",
+        "Keywords": "Switch Transformers",
+        "Institute": "Google",
+        "Paper": "Switch Transformers: Scaling to Trillion Parameter Models with Simple and Efficient Sparsity",
+        "Publication": "JMLR, citation 1318"
+    },
+    {
+        "Date": "2021-08",
+        "Keywords": "Codex",
+        "Institute": "OpenAI",
+        "Paper": "Evaluating Large Language Models Trained on Code",
+        "Publication": "citation 2822"
+    },
+    {
+        "Date": "2021-08",
+        "Keywords": "Foundation Models",
+        "Institute": "Stanford",
+        "Paper": "On the Opportunities and Risks of Foundation Models",
+        "Publication": "citation 2723"
+    },
+    {
+        "Date": "2021-09",
+        "Keywords": "FLAN",
+        "Institute": "Google",
+        "Paper": "Finetuned Language Models are Zero-Shot Learners",
+        "Publication": "ICLR, citation 2304"
+    },
+    {
+        "Date": "2021-10",
+        "Keywords": "T0",
+        "Institute": "Huggingface et al.",
+        "Paper": "Multitask Prompted Training Enables Zero-Shot Task Generalization",
+        "Publication": "ICLR, citation 1312"
+    },
+    {
+        "Date": "2021-12",
+        "Keywords": "GLAM",
+        "Institute": "Google",
+        "Paper": "GLAM: Efficient Scaling of Language Models with Mixture-of-Experts",
+        "Publication": "ICML, citation 473"
+    },
+    {
+        "Date": "2021-12",
+        "Keywords": "WebGPT",
+        "Institute": "OpenAI",
+        "Paper": "WebGPT: Browser-assisted question-answering with human feedback",
+        "Publication": "citation 745"
+    },
+    {
+        "Date": "2021-12",
+        "Keywords": "Retro",
+        "Institute": "DeepMind",
+        "Paper": "Improving language models by retrieving from trillions of tokens",
+        "Publication": "ICML, citation 644"
+    },
+    {
+        "Date": "2022-11",
+        "Keywords": "HELM",
+        "Institute": "Stanford",
+        "Paper": "Holistic Evaluation of Language Models",
+        "Publication": "citation 530"
+    },
+    {
+        "Date": "2022-11",
+        "Keywords": "BLOOM",
+        "Institute": "BigScience",
+        "Paper": "BLOOM: A 176B-Parameter Open-Access Multilingual Language Model",
+        "Publication": "citation 2685"
+    },
+    {
+        "Date": "2022-12",
+        "Keywords": "Galactica",
+        "Institute": "Meta",
+        "Paper": "Galactica: A Large Language Model for Science",
+        "Publication": "citation 468"
+    },
+    {
+        "Date": "2023-01",
+        "Keywords": "OPT-IML",
+        "Institute": "Meta",
+        "Paper": "OPT-IML: Scaling Language Model Instruction Meta Learning through the Lens of Generalization",
+        "Publication": "citation 189"
+    },
+    {
+        "Date": "2023-02",
+        "Keywords": "Flan 2022 Collection",
+        "Institute": "Google",
+        "Paper": "The Flan Collection: Designing Data and Methods for Effective Instruction Tuning",
+        "Publication": "ICML"
+    },
+    {
+        "Date": "2023-02",
+        "Keywords": "LLaMA",
+        "Institute": "Meta",
+        "Paper": "LLaMA: Open and Efficient Foundation Language Models",
+        "Publication": "citation 5992"
+    },
+    {
+        "Date": "2023-03",
+        "Keywords": "Kosmos-1",
+        "Institute": "Microsoft",
+        "Paper": "Language Is Not All You Need: Aligning Perception with Language Models",
+        "Publication": "citation 326"
+    },
+    {
+        "Date": "2023-03",
+        "Keywords": "PaLM-E",
+        "Institute": "Google",
+        "Paper": "PaLM-E: An Embodied Multimodal Language Model",
+        "Publication": "ICML"
+    },
+    {
+        "Date": "2023-04",
+        "Keywords": "GPT 4",
+        "Institute": "OpenAI",
+        "Paper": "GPT-4 Technical Report",
+        "Publication": "citation 598"
+    },
+    {
+        "Date": "2023-05",
+        "Keywords": "Pythia",
+        "Institute": "EleutherAI et al.",
+        "Paper": "Pythia: A Suite for Analyzing Large Language Models Across Training and Scaling",
+        "Publication": "ICML, citation 318"
+    },
+    {
+        "Date": "2023-05",
+        "Keywords": "Dromedary",
+        "Institute": "CMU et al.",
+        "Paper": "Principle-Driven Self-Alignment of Language Models from Scratch with Minimal Human Supervision",
+        "Publication": "NeurIPS"
+    },
+    {
+        "Date": "2023-05",
+        "Keywords": "PaLM 2",
+        "Institute": "Google",
+        "Paper": "PaLM 2 Technical Report",
+        "Publication": "citation 731"
+    },
+    {
+        "Date": "2023-05",
+        "Keywords": "RWKV",
+        "Institute": "Bo Peng",
+        "Paper": "RWKV: Reinventing RNNs for the Transformer Era",
+        "Publication": "EMNLP, citation 207"
+    },
+    {
+        "Date": "2023-07",
+        "Keywords": "DPO",
+        "Institute": "Stanford",
+        "Paper": "Direct Preference Optimization: Your Language Model is Secretly a Reward Model",
+        "Publication": "NeurIPS, citation 929"
+    },
+    {
+        "Date": "2023-10",
+        "Keywords": "LLaMA 2",
+        "Institute": "Meta",
+        "Paper": "Llama 2: Open Foundation and Fine-Tuned Chat Models",
+        "Publication": "citation 993"
+    },
+    {
+        "Date": "2023-12",
+        "Keywords": "Mistral 7B",
+        "Institute": "Mistral",
+        "Paper": "Mistral 7B",
+        "Publication": "citation 187"
+    },
+    {
+        "Date": "2024-03",
+        "Keywords": "Mamba",
+        "Institute": "CMU&Princeton",
+        "Paper": "Mamba: Linear-Time Sequence Modeling with Selective State Spaces",
+        "Publication": "citation 342"
+    },
+    {
+        "Date": "2024-03",
+        "Keywords": "Jamba",
+        "Institute": "AI21 Labs",
+        "Paper": "Jamba: A Hybrid Transformer-Mamba Language Model",
+        "Publication": "citation 25"
+    }
+]
