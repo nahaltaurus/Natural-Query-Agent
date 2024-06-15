@@ -15,7 +15,6 @@ def scrape_model_architectures(url):
     tables = pd.read_html(url)
     return tables[0]  # Assuming the first table is the one we want
 
-# URLs to scrape
 urls = {
     'harms-1': 'https://stanford-cs324.github.io/winter2022/lectures/harms-1/',
     'introduction': 'https://stanford-cs324.github.io/winter2022/lectures/introduction/',
@@ -23,13 +22,13 @@ urls = {
     'legality': 'https://stanford-cs324.github.io/winter2022/lectures/legality/'
 }
 
-# Scrape lecture notes
+
 lecture_contents = {}
 for key, url in urls.items():
     lecture_name = key  # Use the dictionary key as the lecture name
     lecture_contents[lecture_name] = scrape_lecture_notes(url)
 
-# Function to fetch HTML content and extract div content
+
 def fetch_and_extract_content(url):
     try:
         response = requests.get(url)
@@ -48,19 +47,17 @@ def fetch_and_extract_content(url):
     except requests.exceptions.RequestException as e:
         return f"Error fetching {url}: {str(e)}"
 
-# Scrape lecture notes
+
 lecture_contents = {}
 for key, url in urls.items():
      content = fetch_and_extract_content(url)
      lecture_name = key  # Use the dictionary key as the lecture name
      lecture_contents[lecture_name] = content
 
-# Scrape model architectures table
+
 architectures_url = "https://github.com/Hannibal046/Awesome-LLM#milestone-papers"
 model_architectures = scrape_model_architectures(architectures_url)
 
-# Combine all data into a single dictionary
 all_data = {**lecture_contents, "model_architectures": model_architectures.to_json()}
 
-# Print or use all_data as needed
 print(all_data)
